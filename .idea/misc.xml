@@ -7,6 +7,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/server-a/pom.xml" />
+        <option value="$PROJECT_DIR$/serverb/pom.xml" />
+        <option value="$PROJECT_DIR$/server-b/pom.xml" />
       </list>
     </option>
   </component>

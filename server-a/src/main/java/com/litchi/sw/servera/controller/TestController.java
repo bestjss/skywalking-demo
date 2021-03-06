@@ -1,5 +1,7 @@
 package com.litchi.sw.servera.controller;
 
+import com.litchi.sw.servera.fegin.ServerB;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Objects;
@@ -13,6 +15,9 @@ import java.util.Random;
 @RestController
 @RequestMapping("/test")
 public class TestController {
+
+    @Autowired
+    private ServerB serverB;
 
     /**
      * 非睡眠
@@ -52,5 +57,35 @@ public class TestController {
         sleep = rand.nextInt(end - start + 1) + start;
         Thread.sleep(sleep);
         return "this is Server A Method C Sleep " + sleep;
+    }
+
+    /**
+     * 非睡眠
+     * @return
+     */
+    @GetMapping("/b/method-a")
+    public String getMethodAB(){
+        return serverB.getMethodA();
+    }
+
+    /**
+     * 指定睡眠
+     * @param sleep
+     * @return
+     * @throws InterruptedException
+     */
+    @GetMapping("/b/method-b/{sleep}")
+    public String getMethodBB(@PathVariable(name = "sleep")  Long sleep) throws InterruptedException {
+       return serverB.getMethodB(sleep);
+    }
+
+    /**
+     * 随机随眠
+     * @return
+     * @throws InterruptedException
+     */
+    @GetMapping("/b/method-c")
+    public String getMethodCB() throws InterruptedException {
+        return serverB.getMethodC();
     }
 }
