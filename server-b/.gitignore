@@ -3,7 +3,12 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-
+skywalking-agent/activations
+skywalking-agent/bootstrap-plugins
+skywalking-agent/optional-plugins
+skywalking-agent/optional-reporter-plugins
+skywalking-agent/plugins
+skywalking-agent/skywalking-agent.jar
 ### STS ###
 .apt_generated
 .classpath
