@@ -1,6 +1,11 @@
 # skywalking-demo
 Demo of skywalking
 
+## 服务拓展图
+![](doc/img/SkyWalking-Demo.png)
+![](doc/img/SkyWalking-Demo2.png)
+![](doc/img/SkyWalking-Demo3.png)
+
 ```shell script
 # 启动SkyWalking
 $ cd skywalking-apm/bin
