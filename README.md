@@ -25,4 +25,15 @@ $ mvn clean package
 $ cd server-b\target
 # 启动路径 service-a
 java -javaagent:D:\mygithub\skywalking-demo\server-b\skywalking-agent\skywalking-agent.jar -jar server-b-0.0.1-SNAPSHOT.jar
+
+# Service-c
+$ npm i
+$ node index.js
+
+# Service-d
+$ go get
+$ go build .
+$ go install
+$ go run main.go
+
 ```
