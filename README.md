@@ -37,3 +37,9 @@ $ go install
 $ go run main.go
 
 ```
+
+# 测试效果
+
+![](doc/img/SkyWalking-Demo1.png)
+![](doc/img/SkyWalking-Demo4.png)
+![](doc/img/SkyWalking-Demo5.png)
