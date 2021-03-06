@@ -1,5 +1,5 @@
 const router = require('koa-router')();
-const testCtl = require('../controllers/TestController');
+const testCtl = require('../controller/testController');
 
 router.prefix('/test');
 router.get('/method-a',testCtl.getMethodA);
