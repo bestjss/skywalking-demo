@@ -64,7 +64,7 @@ public class TestController {
      * @return
      */
     @GetMapping("/b/method-a")
-    public String getMethodAB(){
+    public String getMethodBA(){
         return serverB.getMethodA();
     }
 
@@ -85,7 +85,37 @@ public class TestController {
      * @throws InterruptedException
      */
     @GetMapping("/b/method-c")
-    public String getMethodCB() throws InterruptedException {
+    public String getMethodBC() throws InterruptedException {
         return serverB.getMethodC();
+    }
+
+    /**
+     * 非睡眠
+     * @return
+     */
+    @GetMapping("/c/b/method-a")
+    public String getMethodCBA(){
+        return serverB.getMethodBCA();
+    }
+
+    /**
+     * 指定睡眠
+     * @param sleep
+     * @return
+     * @throws InterruptedException
+     */
+    @GetMapping("/c/b/method-b/{sleep}")
+    public String getMethodCBB(@PathVariable(name = "sleep")  Long sleep) throws InterruptedException {
+        return serverB.getMethodBCB(sleep);
+    }
+
+    /**
+     * 随机随眠
+     * @return
+     * @throws InterruptedException
+     */
+    @GetMapping("/c/b/method-c")
+    public String getMethodCBC() throws InterruptedException {
+        return serverB.getMethodBCC();
     }
 }

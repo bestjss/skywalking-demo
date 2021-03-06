@@ -10,7 +10,7 @@ class TestController {
     }
 
     async getMethodC(ctx, next){
-        ctx.body = 'this is Server C Method B'
+        ctx.body = 'this is Server C Method C'
     }
 }
 

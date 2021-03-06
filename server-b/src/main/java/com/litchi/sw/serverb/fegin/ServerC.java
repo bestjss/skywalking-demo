@@ -1,19 +1,16 @@
-package com.litchi.sw.servera.fegin;
+package com.litchi.sw.serverb.fegin;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.Objects;
-import java.util.Random;
 
 /**
  * @Auther Litchi_duan
  * @Date 2021/3/6
  * @Description
  */
-@FeignClient(value = "service-b", url = "${fegin.b.host}")
-public interface ServerB {
+@FeignClient(value = "service-c", url = "${fegin.c.host}")
+public interface ServerC {
 
     /**
      * 非睡眠
@@ -41,31 +38,4 @@ public interface ServerB {
      */
     @GetMapping("/test/method-c")
     String getMethodC() throws InterruptedException;
-
-    /**
-     * 非睡眠
-     *
-     * @return
-     */
-    @GetMapping("/test/c/method-a")
-    String getMethodBCA();
-
-    /**
-     * 指定睡眠
-     *
-     * @param sleep
-     * @return
-     * @throws InterruptedException
-     */
-    @GetMapping("/test/c/method-b/{sleep}")
-    String getMethodBCB(@PathVariable(name = "sleep") Long sleep);
-
-    /**
-     * 随机随眠
-     *
-     * @return
-     * @throws InterruptedException
-     */
-    @GetMapping("/test/c/method-c")
-    String getMethodBCC() throws InterruptedException;
 }
